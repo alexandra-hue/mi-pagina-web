@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+.container {
+    position: absolute;
+    left: 48%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    display: block;
+}
+input {
+    outline: none;
+    box-sizing: border-box;
+    height: 60px;
+    width: 0;
+    padding: 0 20px;
+    color: black;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px bisque;
+    transition: all .7s ease;
+}
+
+::placeholder {
+    color: gray;
+}
+.btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: rgb(168, 94, 94);
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+.btn i {
+    font-size: 25px;
+    color: white;
+    line-height: 80px;
+    transition: all .7 ease;
+}
+.container:hover input {
+    width: 350px;
+}
+.container:hover i {
+    transform: rotate(-360deg);
+}
+.btn:hover {
+    background: rgb(201, 128, 128);
+}

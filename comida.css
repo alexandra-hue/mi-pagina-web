@@ -1,0 +1,11 @@
+.label{
+    width: 100%;
+    background-color: #fff;
+    float: left;
+    padding: 8px 0;
+    text-indent: 10px;
+    color: #555555;
+    border: 1px solid #fff; 
+    box-sizing: border-box;
+    height: 42px;
+}
