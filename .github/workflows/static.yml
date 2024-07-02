@@ -1,0 +1,121 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:<HTML>
+    <TITLE>Hamburguesa</TITLE>
+    <BODY background="C:\Users\HP\Documents\haaaaa.jpg">
+    
+    <div align="center">
+        <H1 STYLE="color:Beige;background-color:#000000;border:25px solid rgb(0,0,0);">HAMBURGUESAS</H1>
+        </div>
+    <BR>
+    <link rel="stylesheet" href="style.css">
+    
+    <body>
+
+        <br>
+        <br>
+        <a class="btn-1" href="file:///C:/Users/HP/Documents/pagina%20noel/index.html">Pagina Principal</a>
+        <br>
+        <br>
+        </body>
+    
+    <p align=right> </p>
+        <p STYLE="color:Beige;background-color:#000000;border:10px solid rgb(0,0,0);" align=center>ESTAS SON LAS PROMOCIONES DEL DÍA:</p>
+    <table class="mi-tabla"  style="background-color: #000000;">
+    <p align=right><tr></p>
+    <p align=right><th>Hamburguesas</th></p>
+    <p align=right><th>Promoción</th></p>
+    <p align=right></tr></p>
+    <p align=right><tr></p>
+    <p align=right><td>Hamburguesa Kids</td></p>
+    <p align=right><td>+Refresco y papas gratis</td></p>
+    <p align=right></tr></p>
+    <p align=right><tr></p>
+    <p align=right><td>Hamburguesa bbq y Hamburguesa beikon</td></p>
+    <p align=right><td> 2x1 </td></p>
+    <p align=right></tr></p>
+    <p align=right><tr></p>
+    <p align=right><td>Hambuguesa Kids</td></p>
+    <p align=right><td>+ 1 helado gratis</td></p>
+    <div align="right">
+    
+    </table>
+    <div align="center">
+    <video width="360" height="200" controls>
+        <source src="C:\Users\HP\Downloads\WhatsApp Video 2024-07-01 at 2.19.22 PM (1).mp4" type="video/mp4" >
+      </video>
+    </div>
+    <h1 STYLE="color:Beige;background-color:#000000;border:1px solid rgb(255, 255, 255);" align=center>
+    <p STYLE="color:Beige;background-color:#7e1a1a;border:1px solid rgb(255, 255, 255);" align=center>Tipo de Hamburguesas:
+        <p  STYLE="color:Beige;background-color:#743911;border:1px solid rgb(255, 255, 255);"ALIGN=CENTER>Hamburguesa bbq = $150 </p>
+        <p  STYLE="color:Beige;background-color:#743911;border:1px solid rgb(255, 255, 255);"ALIGN=CENTER>Hamburguesa doble carne = $180 </p>
+        <p  STYLE="color:Beige;background-color:#743911;border:1px solid rgb(255, 255, 255);"ALIGN=CENTER>Hamburguesa de pollo = $150 </p>
+        <p  STYLE="color:Beige;background-color:#743911;border:1px solid rgb(255, 255, 255);"ALIGN=CENTER>Hamburguesa Kids = $90 </p>
+        <p  STYLE="color:Beige;background-color:#743911;border:1px solid rgb(255, 255, 255);"ALIGN=CENTER>Hamburguesa Hawaiana = $130 </p>
+        <p  STYLE="color:Beige;background-color:#743911;border:1px solid rgb(255, 255, 255);"ALIGN=CENTER>Hamburgesa beikon = $110 </p>
+    
+    </p>
+</h1>
+    </BODY>
+    </HLML>
+.btn-1 {
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    padding: 15px 35px ;
+    color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+    border: 10px solid seashell;
+}
+.mi-tabla{
+   font-family: Arial, Helvetica, sans-serif;
+   color: aliceblue;
+   font-size: 14px;
+   border: 15px solid seashell;
+   border-collapse: collapse;
+}
+
+.mi-tabla th, .mi-tabla td{
+    border: 1px solid seashell;
+    padding: 8px;
+}
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
